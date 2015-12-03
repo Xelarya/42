@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 15:20:45 by agardin           #+#    #+#             */
-/*   Updated: 2015/11/30 15:31:04 by agardin          ###   ########.fr       */
+/*   Updated: 2015/12/03 15:23:33 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int i;
+	size_t i;
 	char *dest;
-	const char *serc;
+	char *serc;
 
+	if (dst == src || n == 0)
+		return (dst);
 	i = 0;
-	dest = dst;
-	serc = src;
-	while(i < n && serc[i] != c)
+	dest = (char *)dst;
+	serc = (char *)src;
+	while(i < n)
 	{
-		if(!c)
-			return(NULL);
+		if (dest[i] == c)
+			return (dest + 1 + i);
 		dest[i] = serc[i];
 		i++;
 	}
-	return(dst);
+	return (NULL);
 }

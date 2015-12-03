@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 14:38:02 by agardin           #+#    #+#             */
-/*   Updated: 2015/11/30 15:26:51 by agardin          ###   ########.fr       */
+/*   Updated: 2015/12/03 17:02:05 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,9 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
-void	bzero(void *s, size_t n);
-void	*memccpy(void *dst, const char *src, int c, size_t n);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memccpy(void *dst, const char *src, int c, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memchr(const void *s, int c, size_t n);
 
 #endif

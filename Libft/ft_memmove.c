@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 14:01:51 by agardin           #+#    #+#             */
-/*   Updated: 2015/12/03 14:45:03 by agardin          ###   ########.fr       */
+/*   Created: 2015/12/03 15:30:03 by agardin           #+#    #+#             */
+/*   Updated: 2015/12/03 15:47:40 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-/*	size_t i;
-	char *t;
+	size_t i;
+	char *dest;
+	char *serc;
 
+	if (dst < src)
+		return(ft_memcpy(dst, src, len));
+	dest = (char *)dst;
+	serc = (char *)src;
 	i = 0;
-	t = s;
-
-	while(i < n && i != 0)
+	if (dst > src)
 	{
-		t[i] = '\0';
+		while (len--)
+		{
+			dest[len] = serc[len];
+		}
+		return (dst);
 	}
-	*/
-	ft_memset(s, 0, n);
+	return (dst);
 }
