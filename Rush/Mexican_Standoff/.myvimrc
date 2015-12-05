@@ -1,0 +1,31 @@
+" **************************************************************************** "
+"                                                                              "
+"                                                         :::      ::::::::    "
+"    .myvimrc                                           :+:      :+:    :+:    "
+"                                                     +:+ +:+         +:+      "
+"    By: agardin <marvin@42.fr>                     +#+  +:+       +#+         "
+"                                                 +#+#+#+#+#+   +#+            "
+"    Created: 2015/12/05 15:40:57 by agardin           #+#    #+#              "
+"    Updated: 2015/12/05 15:41:06 by agardin          ###   ########.fr        "
+"                                                                              "
+" **************************************************************************** "
+
+" Auto indent
+
+set autoindent
+set smartindent
+
+" Map auto complite of (, {
+
+:imap ( ()<esc>i
+:imap { {<esc>o}<esc>O
+:imap [ []<esc>i
+
+" position curseur
+
+set ruler
+
+" Highlight
+
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$\| \+\ze\t\| \s\s/

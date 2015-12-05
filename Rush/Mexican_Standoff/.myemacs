@@ -1,0 +1,28 @@
+;;indentation
+(add-hook 'c-mode-common-hook '(lambda ()
+				 (local-set-key (kbd "RET") 'newline-and-indent)))
+
+;; Affiche le numero de ligne et de colonne
+(column-number-mode t)
+(line-number-mode t)
+
+;; Deplacement auto des fichier~ dans le dossier ~/.emacs.d/backup
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+      backup-by-copying t
+      version-control t
+      delete-old-versions t
+      kept-new-versions 5
+      kept-old-versions 5
+            )
+
+;; ========== Enable Line and Column Numbering ==========
+
+;; Show line-number in the mode line
+(line-number-mode 1)
+
+;; Show column-number in the mode line
+(column-number-mode 1)
+
+;; Suppression des espaces en fin de ligne dans les fichiers C
+(add-hook 'c-mode-hook '(lambda ()
+			  (add-hook 'write-contents-hooks 'delete-trailing-whitespace nil t)))
