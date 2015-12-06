@@ -1,28 +1,117 @@
-;;indentation
-(add-hook 'c-mode-common-hook '(lambda ()
-				 (local-set-key (kbd "RET") 'newline-and-indent)))
+(add-to-list 'load-path "~/.emacs.d/cl-lib/")
+(require 'cl-lib)
 
-;; Affiche le numero de ligne et de colonne
-(column-number-mode t)
-(line-number-mode t)
+ ; set c-mode for all .go and .cmd type files and awk
+(setq auto-mode-alist (cons '("\\.text$" . text-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.txt$" . text-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.doc$" . text-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.awk$" . awk-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.perl$" . perl-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.pl$" . perl-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.C$" . c++-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.cpp$" . c++-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.cxx$" . c++-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.tcl$" . tcl-mode) auto-mode-alist))
 
-;; Deplacement auto des fichier~ dans le dossier ~/.emacs.d/backup
-(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
-      backup-by-copying t
-      version-control t
-      delete-old-versions t
-      kept-new-versions 5
-      kept-old-versions 5
-            )
 
-;; ========== Enable Line and Column Numbering ==========
+(setq default-frame-alist (append default-frame-alist
+								  '((foreground-color . "white")
+									(background-color . "black")
+									(cursor-color . "red"))))
 
-;; Show line-number in the mode line
-(line-number-mode 1)
+(set-face-foreground 'bold "yellow")
+(set-face-background 'bold "black")
 
-;; Show column-number in the mode line
+(set-face-foreground 'bold-italic "yellow green")
+(set-face-foreground 'italic "yellow3")
+
+(set-face-foreground 'region "blue")
+(set-face-background 'region "grey30")
+
+
+;;; --------------- Font Lock infor begins here ----------
+;;; ----------------                           -----------
+;;; All the font-lock schtuff...
+(load "font-lock" nil t)
+
+										;(define-key global-map "\C-z " 'font-lock-fontify-buffer)
+
+(setq emacs-lisp-mode-hook '(lambda () (font-lock-mode 1))
+	  lisp-mode-hook '(lambda () (font-lock-mode 1))
+	  c-mode-hook '(lambda () (font-lock-mode 1))
+	  c++-mode-hook '(lambda () (font-lock-mode 1))
+	  perl-mode-hook '(lambda () (font-lock-mode 1))
+	  c++-c-mode-hook '(lambda () (font-lock-mode 1))
+	  tex-mode-hook '(lambda () (font-lock-mode 1))
+	  shell-mode-hook '(lambda () (font-lock-mode 1))
+	  dired-mode-hook '(lambda () (font-lock-mode 1))
+	  rmail-mode-hook '(lambda () (font-lock-mode 1))
+	  rmail-summary-mode-hook '(lambda () (font-lock-mode 1))
+	  compilation-mode-hook '(lambda () (font-lock-mode 1)))
+
+(make-face 'fl-comment-face)
+(set-face-foreground 'fl-comment-face "green")
+(set-face-background 'fl-comment-face "black")
+(setq font-lock-comment-face 'fl-comment-face)
+
+(make-face 'fl-doc-string-face)
+(set-face-foreground 'fl-doc-string-face "slateblue")
+(set-face-background 'fl-doc-string-face "black")
+(setq font-lock-doc-string-face 'fl-doc-string-face)
+
+(make-face 'fl-string-face)
+(set-face-foreground 'fl-string-face "yellow")
+(set-face-background 'fl-string-face "black")
+(setq font-lock-string-face 'fl-string-face)
+
+(make-face 'fl-function-name-face)
+(set-face-foreground 'fl-function-name-face "DeepSkyBlue")
+(set-face-background 'fl-function-name-face "black")
+(setq font-lock-function-name-face 'fl-function-name-face)
+
+(make-face 'fl-keyword-face)
+(set-face-foreground 'fl-keyword-face "red")
+(set-face-background 'fl-keyword-face "black")
+(setq font-lock-keyword-face 'fl-keyword-face)
+
+(make-face 'fl-type-face)
+(set-face-foreground 'fl-type-face "white")
+(set-face-background 'fl-type-face "slategrey")
+(setq font-lock-type-face 'fl-type-face)
+
+(set-face-foreground 'mode-line "white")
+(set-face-background 'mode-line "grey20")
+(set-face-foreground 'highlight "white")
+(set-face-foreground 'secondary-selection "white")
+(set-face-foreground 'highlight "white")
+
+;show whitespaes
+(setq show-trailing-whitespace t)
+(setq-default show-trailing-whitespace t)
+
+(add-hook 'c-mode-common-hook
+		  (lambda() (highlight-regexp "  " "yellow")))
+
+;autopair bracket
+(add-to-list 'load-path "~/.emacs.d/lisp/") ;; comment if autopair.el is in standard load path 
+(require 'autopair)
+(autopair-global-mode) ;; enable autopair in all buffers
+
+;ruler mode
+(add-hook 'window-configuration-change-hook (lambda () (ruler-mode 1)))
+
+(setq backup-directory-alist `(("." . "~/.emacs.d/")))
+
+(show-paren-mode 1) ; turn on bracket match highlight
+
 (column-number-mode 1)
+(setq make-backup-files nil) ; stop creating those backup~ file
+(load-theme 'misterioso)
+(setq minibuffer-prompt-properties (quote (read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt)))
 
-;; Suppression des espaces en fin de ligne dans les fichiers C
-(add-hook 'c-mode-hook '(lambda ()
-			  (add-hook 'write-contents-hooks 'delete-trailing-whitespace nil t)))
+(set-keyboard-coding-system nil)
+
+(setq mac-option-key-is-meta nil)
+(setq mac-command-key-is-meta t)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)
