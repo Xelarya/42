@@ -1,0 +1,15 @@
+Fn f1			2
+/e/2 ret		5
+w i spc esc		4
+/k/				3
+a spc esc		3
+3j				2
+right d$		3
+17G 0			4
+v 3j			3
+d				1
+2k				2
+p				1
+gg=G			5
+ZZ				2
+				40
