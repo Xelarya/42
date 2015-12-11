@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 16:14:52 by agardin           #+#    #+#             */
-/*   Updated: 2015/12/11 16:27:06 by agardin          ###   ########.fr       */
+/*   Created: 2015/12/11 12:40:36 by agardin           #+#    #+#             */
+/*   Updated: 2015/12/11 16:04:31 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strnequ(char const *s1, char const *s2, size_t n)
+void	ft_strclr(char *s)
 {
-	if (s1 == NULL || s2 == NULL)
-		return ((char)NULL);
-	return (!ft_strncmp(s1, s2, n));
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		s[i] = '\0';
+		i++;
+	}
 }
