@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strim.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alex <mdubray@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/03 15:30:03 by agardin           #+#    #+#             */
-/*   Updated: 2015/12/11 15:42:08 by agardin          ###   ########.fr       */
+/*   Created: 2015/12/15 12:51:03 by alex              #+#    #+#             */
+/*   Updated: 2015/12/15 12:51:03 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strtrim(char const *s)
 {
-	char *s1;
-	char *s2;
-
-	if (dst < src)
-		return(ft_memcpy(dst, src, len));
-	s1 = (char *)dst;
-	s2 = (char *)src;
-	if (dst > src)
+	int i;
+	int j;
+	int blank;
+	char *strim;
+	
+	i = 0;
+	j = ft_strlen(s) - 1;
+	if (!s)
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		while (len--)
-		{
-			s1[len] = s2[len];
-		}
-		return (dst);
+		if (*s == ' ' || *s == '\n' || *s == '\t')
+			blank++;
+		i++;
 	}
-	return (dst);
+
 }
