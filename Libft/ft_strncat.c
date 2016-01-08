@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 12:23:37 by agardin           #+#    #+#             */
-/*   Updated: 2015/12/11 15:52:13 by agardin          ###   ########.fr       */
+/*   Updated: 2016/01/08 12:18:24 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 
 	i = 0;
 	j = ft_strlen(s1);
-
 	while (s2[i] && i < n)
 	{
 		s1[i + j] = s2[i];

@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 14:38:02 by agardin           #+#    #+#             */
-/*   Updated: 2015/12/11 16:06:38 by agardin          ###   ########.fr       */
+/*   Updated: 2016/01/08 13:03:07 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_atoi(const char *nptr);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
 
 #endif

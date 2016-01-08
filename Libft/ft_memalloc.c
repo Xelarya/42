@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 12:36:42 by agardin           #+#    #+#             */
-/*   Updated: 2015/12/11 15:42:53 by agardin          ###   ########.fr       */
+/*   Updated: 2016/01/08 12:39:12 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	*ft_memalloc(size_t size)
 		return (NULL);
 	if (!(mem = malloc(sizeof(void) * size)))
 		return (0);
-		ft_bzero(mem, size);
-		return (mem);
+	ft_bzero(mem, size);
+	return (mem);
 }

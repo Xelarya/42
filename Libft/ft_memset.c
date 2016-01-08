@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 12:44:51 by agardin           #+#    #+#             */
-/*   Updated: 2015/12/03 14:36:00 by agardin          ###   ########.fr       */
+/*   Updated: 2016/01/08 12:24:31 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t i;
-	unsigned char *t;
+	size_t			i;
+	unsigned char	*t;
 
 	i = 0;
-	t = b; //on ne peut pas deference un void*
-
+	t = b;
 	while (i < len)
 	{
 		t[i] = (unsigned char)c;

@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 12:39:48 by agardin           #+#    #+#             */
-/*   Updated: 2015/12/11 16:59:15 by agardin          ###   ########.fr       */
+/*   Updated: 2016/01/08 12:20:31 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	{
 		while (s[i] != '\0')
 		{
-			f(i, s +i);
+			f(i, s + i);
 			i++;
 		}
 		return ;
