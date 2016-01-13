@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 18:57:28 by agardin           #+#    #+#             */
-/*   Updated: 2015/11/30 15:15:31 by agardin          ###   ########.fr       */
+/*   Updated: 2016/01/13 18:08:57 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ int	main(void)
     printf("%s", ft_strstr("je comprends pas", "absolument"));
 	printf("%s", ft_strstr("je comprends pas", "pas"));
 	printf("%s", ft_strstr("je comprends pas", ""));
-
+	*/
+	/*
 	printf("%s\n", ft_strnstr("je comprends pas", "absolument", 3));
 	printf("%s\n", ft_strnstr("je comprends pas", "pas", 2));
 	printf("%s\n", ft_strnstr("je comprends pas", "", 3));
 	printf("%s\n", ft_strnstr("je comprends pas", "je", 3));
-*/
-/*	
+	*/
+	/*	
     printf("%s\n", ft_strcpy("test", "mode_42"));
 
 	printf("%s\n", ft_strncpy("test", "mode_42", 3));
@@ -33,8 +34,8 @@ int	main(void)
     printf("%s\n", ft_strdup("test"));
     printf("%s\n", ft_strdup(""));
     printf("%s\n", ft_strdup("test on sait pas quoi..."));
-*/
-/*	
+	*/
+	/*	
     printf("%s\n", ft_strcat(av[1], av[2]));
     printf("%s\n", ft_strncat(av[1], av[2], 4));
 
@@ -51,13 +52,13 @@ int	main(void)
 	printf("%d\n", ft_strequ("test", "test"));
 	printf("%d\n", ft_strequ("test", "tast"));
 	*/
-
+	/*
 	printf("%d\n", ft_strnequ("test", "tast", 2));
 	printf("%d\n", ft_strnequ("test", "test", 2));
 	printf("%d\n", ft_strnequ("test", "t", 2));
 	printf("%d\n", ft_strnequ("test", "", 2));
 	printf("%d\n", ft_strnequ("t", "t", 2));
-
+	*/
 	/*
 	printf("%s\n", ft_strchr("test", 's'));
 	printf("%s\n", ft_strchr("test", '\0'));
@@ -85,4 +86,11 @@ int	main(void)
 	printf("%d\n", ft_toupper('z'));
 	printf("%d\n", ft_toupper('G'));
 	*/
+	printf("%s\n", ft_itoa(25383659));
+	printf("%s\n", ft_itoa('a'));
+	printf("%s\n", ft_itoa(-2147483648));
+	printf("%d\n", ft_atoi("25383659"));
+	printf("%d\n", ft_atoi("-3544"));
+	printf("%d\n", ft_atoi("-2147483648"));
+	printf("%d\n", ft_atoi("-./,),(-*,())"));
 }

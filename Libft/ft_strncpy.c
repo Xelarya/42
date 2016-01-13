@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 16:06:01 by agardin           #+#    #+#             */
-/*   Updated: 2016/01/08 16:44:29 by agardin          ###   ########.fr       */
+/*   Updated: 2016/01/13 16:30:05 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
-	unsigned int	size;
+	size_t	i;
 
-	if (!dst || !src)
-		return (dst);
-	size = ft_strlen(src);
-	if (size >= n)
-		ft_memcpy(dst, src, n);
-	else
+	i = 0;
+	while (i < n && src[i])
 	{
-		ft_memcpy(dst, src, size);
-		ft_memset(dst + size, '\0', n - size);
+		dst[i] =src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dst[i] = '\0';
+		i++;
 	}
 	return (dst);
 }

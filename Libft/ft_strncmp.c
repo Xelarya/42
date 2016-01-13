@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:56:50 by agardin           #+#    #+#             */
-/*   Updated: 2016/01/08 12:22:15 by agardin          ###   ########.fr       */
+/*   Updated: 2016/01/13 16:11:04 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

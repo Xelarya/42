@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: agardin <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2016/01/13 17:37:21 by agardin           #+#    #+#              #
+#    Updated: 2016/01/13 17:38:14 by agardin          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 
 SOURCES = ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c\
@@ -15,7 +27,9 @@ SOURCES = ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c\
 		  ft_strjoin.c ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c\
 		  ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c\
 		  ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c\
-		  ft_strsub.c ft_strtrim.c 
+		  ft_strsub.c ft_strtrim.c\
+		  \
+		  ft_lstnew.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c
 
 		  HEADERS = libft.h
 
