@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 16:06:01 by agardin           #+#    #+#             */
-/*   Updated: 2016/01/13 16:30:05 by agardin          ###   ########.fr       */
+/*   Updated: 2016/01/14 12:49:24 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 	i = 0;
 	while (i < n && src[i])
 	{
-		dst[i] =src[i];
+		dst[i] = src[i];
 		i++;
 	}
 	while (i < n)
