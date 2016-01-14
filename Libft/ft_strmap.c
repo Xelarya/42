@@ -14,9 +14,9 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char			*str;
-	unsigned int	i;
-	unsigned int	j;
+	char	*str;
+	int		i;
+	int		j;
 
 	i = 0;
 	if (!s || !f)
