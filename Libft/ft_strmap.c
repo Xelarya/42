@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 13:02:58 by agardin           #+#    #+#             */
-/*   Updated: 2016/01/08 16:28:17 by agardin          ###   ########.fr       */
+/*   Updated: 2016/01/29 10:59:22 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	str = (char *)malloc(sizeof(char) * (j + 1));
 	if (!str)
 		return (NULL);
-	while (i <= j)
+	while (i < j)
 	{
 		str[i] = f(s[i]);
 		i++;

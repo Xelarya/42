@@ -6,7 +6,7 @@
 /*   By: alex <mdubray@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 16:43:11 by alex              #+#    #+#             */
-/*   Updated: 2016/01/08 16:40:40 by agardin          ###   ########.fr       */
+/*   Updated: 2016/01/29 11:05:47 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_atoi(const char *str)
 {
-	int		nb;
+	size_t	nb;
 	int		sign;
 
 	if (!str)
@@ -35,5 +35,5 @@ int		ft_atoi(const char *str)
 		nb = nb * 10 + *str - '0';
 		str++;
 	}
-	return (sign * nb);
+	return (sign * (int)nb);
 }

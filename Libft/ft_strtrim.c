@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 12:08:27 by agardin           #+#    #+#             */
-/*   Updated: 2016/01/14 12:36:07 by agardin          ###   ########.fr       */
+/*   Updated: 2016/01/29 13:07:20 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ char	*ft_strtrim(char const *s)
 	if (s[i] == '\0')
 		return ("");
 	j = ft_strlen(s) - 1;
-	while (s[j] == || s[j] == '\n' || s[j] == '\t')
+	while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
 		j--;
-	str = (char *)malloc(sizeof(char) * (j -i + 2));
+	str = (char *)malloc(sizeof(char) * (j -i + 1));
 	if (str == NULL)
 		return (NULL);
 	while (k < j - i + 1)

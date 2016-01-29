@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 18:57:28 by agardin           #+#    #+#             */
-/*   Updated: 2016/01/14 14:52:54 by agardin          ###   ########.fr       */
+/*   Updated: 2016/01/29 11:15:08 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,21 +86,29 @@ int	main(void)
 	printf("%d\n", ft_toupper('z'));
 	printf("%d\n", ft_toupper('G'));
 	*/
-	/*
+/*	
 	printf("%s\n", ft_itoa(25383659));
 	printf("%s\n", ft_itoa('a'));
 	printf("%s\n", ft_itoa(-2147483648));
+	printf("%s\n", ft_itoa(-123));
+*/
+	/*
 	printf("%d\n", ft_atoi("25383659"));
 	printf("%d\n", ft_atoi("-3544"));
 	printf("%d\n", ft_atoi("-2147483648"));
+	printf("%d\n", ft_atoi("2147483647"));
 	printf("%d\n", ft_atoi("-./,),(-*,())"));
-	*/
+*/
 	/*
 	printf("%s\n", ft_strtrim("	test    test	mode 42   "));
 	printf("%s\n", ft_strtrim(""));
 	printf("%s\n", ft_strtrim("	    	    "));
 	printf("%s\n", ft_strtrim("NULL"));
 	*/
+	/*
 	ft_strsplit("#test###mode**42###test", '#');
 	ft_strsplit("#test###mode**42###test", ' ');
+	*/
+	ft_strtrim("test    Mode	42");
+
 }
