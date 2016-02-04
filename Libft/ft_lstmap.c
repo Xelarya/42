@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/08 12:08:27 by agardin           #+#    #+#             */
-/*   Updated: 2016/02/03 16:05:02 by agardin          ###   ########.fr       */
+/*   Created: 2016/02/03 15:10:46 by agardin           #+#    #+#             */
+/*   Updated: 2016/02/03 16:09:06 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	k;
-	char			*str;
+	t_list	*result;
+	t_list	*tmp;
+	t_list	*tmp2;
 
-	i = 0;
-	k = 0;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-		i++;
-	if (s[i] == '\0')
-		return ("");
-	j = ft_strlen(s) - 1;
-	while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
-		j--;
-	str = (char *)malloc(sizeof(char) * (j - i + 1));
-	if (str == NULL)
+	if (!lst || !f)
 		return (NULL);
-	while (k < j - i + 1)
+	tmp2 = f(lst);
+	if ((result = ft_lstnew(tmp2->content, tmp2->content_size)))
 	{
-		str[k] = s[i + k];
-		k++;
+		tmp = result;
+		lst = lst->next;
+		while (lst)
+		{
+			tmp2 = f(lst);
+			if (!(tmp->next = ft_lstnew(tmp2->content, tmp2->content_size)))
+				return (NULL);
+			tmp = tmp->next;
+			lst = lst->next;
+		}
 	}
-	str[k] = '\0';
-	return (str);
+	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 12:32:39 by agardin           #+#    #+#             */
-/*   Updated: 2016/01/14 16:20:20 by agardin          ###   ########.fr       */
+/*   Updated: 2016/02/03 16:23:32 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ char		*ft_itoa(int n)
 
 	sign = ft_signint(n);
 	nblen = ft_lenint(n);
-	res = NULL;
 	res = (char *)malloc(sizeof(char) * (nblen + sign + 1));
 	if (res)
 	{
@@ -54,15 +53,10 @@ char		*ft_itoa(int n)
 		while (n != 0)
 		{
 			if (n >= 0)
-			{
 				*--res = (n % 10) + '0';
-				n /= 10;
-			}
 			else
-			{
 				*--res = '0' - (n % 10);
-				n /= 10;
-			}
+			n /= 10;
 		}
 		if (sign)
 			*--res = '-';

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <mdubray@student.42.fr>               +#+  +:+       +#+        */
+/*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/14 16:43:11 by alex              #+#    #+#             */
-/*   Updated: 2016/01/29 11:05:47 by agardin          ###   ########.fr       */
+/*   Created: 2016/02/03 18:37:44 by agardin           #+#    #+#             */
+/*   Updated: 2016/02/03 19:09:00 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 int		ft_atoi(const char *str)
 {
-	size_t	nb;
-	int		sign;
+	unsigned int	i;
+	long			rslt;
+	long			sign;
 
-	if (!str)
-		return (0);
+	i = 0;
+	rslt = 0;
 	sign = 1;
 	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\v'
 			|| *str == '\f' || *str == '\r')
 		str++;
-	if (*str == '-' || *str == '+')
+	if (str[i] == '+' || str[i] == '-')
 	{
-		if (*str == '-')
+		if (str[i] == '-')
 			sign = -1;
-		str++;
+		i++;
 	}
-	nb = 0;
-	while (ft_isdigit((int)*str))
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		nb = nb * 10 + *str - '0';
-		str++;
+		rslt = rslt * 10 + str[i] - '0';
+		i++;
 	}
-	return (sign * (int)nb);
+	return ((int)(rslt * sign));
 }

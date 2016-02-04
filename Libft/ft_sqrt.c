@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 14:55:06 by agardin           #+#    #+#             */
-/*   Updated: 2016/02/03 16:06:58 by agardin          ###   ########.fr       */
+/*   Created: 2016/02/03 12:50:00 by agardin           #+#    #+#             */
+/*   Updated: 2016/02/03 16:07:28 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+int		ft_sqrt(int nb)
 {
-	size_t	i;
-	size_t	j;
+	int i;
 
-	i = 0;
-	while (s1[i] != '\0' && i < n)
+	i = 1;
+	if (nb == 0)
+		return (0);
+	while (i < nb)
 	{
-		j = 0;
-		while (s2[j] != '\0' && s1[i + j] == s2[j] && i + j < n)
-			j++;
-		if (s2[j] == '\0')
-			return ((char *)s1 + i);
+		if (i * i == nb)
+			return (i);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

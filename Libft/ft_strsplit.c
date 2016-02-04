@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 12:56:22 by agardin           #+#    #+#             */
-/*   Updated: 2016/01/29 13:01:31 by agardin          ###   ########.fr       */
+/*   Updated: 2016/02/03 15:54:00 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ static char		**ft_createsplit(char const *s, char c, char **newtab)
 		else
 			while (s[len] == c && s[len] != '\0')
 				len++;
-		newtab[i] = NULL;
 	}
+	newtab[i] = NULL;
 	return (newtab);
 }
 
