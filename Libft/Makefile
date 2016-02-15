@@ -6,7 +6,7 @@
 #    By: agardin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/13 17:37:21 by agardin           #+#    #+#              #
-#    Updated: 2016/02/03 16:26:47 by agardin          ###   ########.fr        #
+#    Updated: 2016/02/15 14:30:55 by agardin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ SOURCES = ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c\
 		  ft_lstnew.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c\
 		  ft_lstmap.c\
 
-		  HEADERS = libft.h
+HEADERS = libft.h
 
 OBJECTS = $(subst .c,.o,$(SOURCES))
 
@@ -42,17 +42,17 @@ WFLAGS = -Wall -Werror -Wextra -I includes
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-		@ar rc $(NAME) $(OBJECTS)
-		@ranlib $(NAME)
+		ar rc $(NAME) $(OBJECTS)
+		ranlib $(NAME)
 		@echo "Make Libft :\033[1;33m DONE !\033[m"
 
 $(OBJECTS): $(SOURCES) $(HEADERS)
-		@gcc $(WFLAGS) -c $(SOURCES)
+		gcc $(WFLAGS) -c $(SOURCES)
 		
 clean:
-		@rm -f $(OBJECTS)
+		rm -f $(OBJECTS)
 
 fclean: clean
-		@rm -f $(NAME)
+		rm -f $(NAME)
 
 re: fclean all

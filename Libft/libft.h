@@ -6,7 +6,7 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 14:38:02 by agardin           #+#    #+#             */
-/*   Updated: 2016/02/03 16:28:36 by agardin          ###   ########.fr       */
+/*   Updated: 2016/02/15 18:34:14 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <ctype.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct		s_list
 {
@@ -34,6 +35,7 @@ char				*ft_strnstr(const char *s1, const char *s2, size_t n);
 char				*ft_strdup(const char *s1);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
+size_t				ft_strlcat(char *dst, const char *src, size_t size);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putnbr(int n);
@@ -58,6 +60,7 @@ void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
+int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
@@ -70,7 +73,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-int					ft_atoi(const char *nptr);
+int					ft_atoi(const char *str);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_itoa(int n);
 char				**ft_strsplit(char const *s, char c);
