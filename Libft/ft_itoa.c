@@ -6,11 +6,10 @@
 /*   By: agardin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 12:32:39 by agardin           #+#    #+#             */
-/*   Updated: 2016/02/03 16:23:32 by agardin          ###   ########.fr       */
+/*   Updated: 2016/02/16 11:54:19 by agardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int	ft_lenint(int cp)
